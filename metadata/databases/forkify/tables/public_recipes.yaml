@@ -1,0 +1,13 @@
+table:
+  name: recipes
+  schema: public
+array_relationships:
+- name: ingredients
+  using:
+    manual_configuration:
+      column_mapping:
+        id: recipe_id
+      insertion_order: null
+      remote_table:
+        name: ingredients
+        schema: public
