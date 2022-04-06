@@ -1,3 +1,26 @@
 table:
   name: ingredients
   schema: public
+select_permissions:
+- permission:
+    columns:
+    - id
+    - recipe_id
+    - quantity
+    - unit
+    - description
+    - created_at
+    - updated_at
+    filter: {}
+  role: anonymous
+- permission:
+    columns:
+    - id
+    - recipe_id
+    - unit
+    - quantity
+    - description
+    - created_at
+    - updated_at
+    filter: {}
+  role: user

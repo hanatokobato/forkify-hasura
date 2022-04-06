@@ -11,3 +11,30 @@ array_relationships:
       remote_table:
         name: ingredients
         schema: public
+select_permissions:
+- permission:
+    columns:
+    - id
+    - cooking_time
+    - image_url
+    - publisher
+    - source_url
+    - title
+    - servings
+    - created_at
+    - updated_at
+    filter: {}
+  role: anonymous
+- permission:
+    columns:
+    - id
+    - title
+    - publisher
+    - source_url
+    - image_url
+    - servings
+    - cooking_time
+    - created_at
+    - updated_at
+    filter: {}
+  role: user
