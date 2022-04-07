@@ -20,3 +20,14 @@ services:
       HASURA_GRAPHQL_ADMIN_SECRET: "${HASURA_GRAPHQL_ADMIN_SECRET}"
       HASURA_GRAPHQL_JWT_SECRET: "${HASURA_GRAPHQL_JWT_SECRET}"
       HASURA_GRAPHQL_UNAUTHORIZED_ROLE: "${HASURA_GRAPHQL_UNAUTHORIZED_ROLE}"
+  ngrok-graphql-engine:
+    image: wernight/ngrok
+    ports:
+      - "4040:4040"
+    command:
+      - /bin/sh
+      - -c
+      - |
+        ngrok http -bind-tls=true graphql-engine:8080
+    depends_on:
+      - graphql-engine
