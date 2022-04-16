@@ -11,6 +11,24 @@ array_relationships:
       remote_table:
         name: ingredients
         schema: public
+insert_permissions:
+- permission:
+    backend_only: false
+    check: {}
+    columns:
+    - id
+    - user_id
+    - cooking_time
+    - image_url
+    - publisher
+    - source_url
+    - title
+    - servings
+    - created_at
+    - updated_at
+    set:
+      user_id: x-hasura-User-Id
+  role: user
 select_permissions:
 - permission:
     columns:
@@ -27,14 +45,15 @@ select_permissions:
   role: anonymous
 - permission:
     columns:
-    - id
-    - title
-    - publisher
-    - source_url
-    - image_url
-    - servings
     - cooking_time
     - created_at
+    - id
+    - image_url
+    - publisher
+    - servings
+    - source_url
+    - title
     - updated_at
+    - user_id
     filter: {}
   role: user
