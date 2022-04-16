@@ -1,6 +1,19 @@
 table:
   name: ingredients
   schema: public
+insert_permissions:
+- permission:
+    backend_only: false
+    check: {}
+    columns:
+    - id
+    - recipe_id
+    - unit
+    - quantity
+    - description
+    - created_at
+    - updated_at
+  role: user
 select_permissions:
 - permission:
     columns:
