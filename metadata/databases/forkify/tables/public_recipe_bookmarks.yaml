@@ -1,0 +1,49 @@
+table:
+  name: recipe_bookmarks
+  schema: public
+object_relationships:
+- name: recipe
+  using:
+    manual_configuration:
+      column_mapping:
+        recipe_id: id
+      insertion_order: null
+      remote_table:
+        name: recipes
+        schema: public
+- name: user
+  using:
+    manual_configuration:
+      column_mapping:
+        user_id: id
+      insertion_order: null
+      remote_table:
+        name: users
+        schema: public
+insert_permissions:
+- permission:
+    backend_only: false
+    check: {}
+    columns:
+    - recipe_id
+    set:
+      user_id: x-hasura-User-Id
+  role: user
+select_permissions:
+- permission:
+    columns:
+    - id
+    - recipe_id
+    - user_id
+    - created_at
+    - updated_at
+    filter:
+      user_id:
+        _eq: X-Hasura-User-Id
+  role: user
+delete_permissions:
+- permission:
+    filter:
+      user_id:
+        _eq: X-Hasura-User-Id
+  role: user

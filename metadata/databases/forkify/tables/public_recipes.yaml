@@ -11,6 +11,15 @@ array_relationships:
       remote_table:
         name: ingredients
         schema: public
+- name: recipe_bookmarks
+  using:
+    manual_configuration:
+      column_mapping:
+        id: recipe_id
+      insertion_order: null
+      remote_table:
+        name: recipe_bookmarks
+        schema: public
 insert_permissions:
 - permission:
     backend_only: false
