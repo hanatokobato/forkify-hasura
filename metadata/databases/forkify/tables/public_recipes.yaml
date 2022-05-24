@@ -41,15 +41,16 @@ insert_permissions:
 select_permissions:
 - permission:
     columns:
-    - id
     - cooking_time
+    - created_at
+    - id
     - image_url
     - publisher
+    - servings
     - source_url
     - title
-    - servings
-    - created_at
     - updated_at
+    - user_id
     filter: {}
   role: anonymous
 - permission:
