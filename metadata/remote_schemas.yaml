@@ -1,1 +1,5 @@
-[]
+- name: forkify-backend
+  definition:
+    url_from_env: REMOTE_BACKEND_ENDPOINT
+    timeout_seconds: 60
+  comment: ""
