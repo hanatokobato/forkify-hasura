@@ -17,14 +17,15 @@ services:
       ## enable debugging mode. It is recommended to disable this in production
       HASURA_GRAPHQL_DEV_MODE: 'true'
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
-      HASURA_GRAPHQL_ADMIN_SECRET: "${HASURA_GRAPHQL_ADMIN_SECRET}"
-      HASURA_GRAPHQL_JWT_SECRET: "${HASURA_GRAPHQL_JWT_SECRET}"
-      HASURA_GRAPHQL_UNAUTHORIZED_ROLE: "${HASURA_GRAPHQL_UNAUTHORIZED_ROLE}"
-      REMOTE_BACKEND_ENDPOINT: "${REMOTE_BACKEND_ENDPOINT}"
+      HASURA_GRAPHQL_ADMIN_SECRET: '${HASURA_GRAPHQL_ADMIN_SECRET}'
+      HASURA_GRAPHQL_JWT_SECRET: '${HASURA_GRAPHQL_JWT_SECRET}'
+      HASURA_GRAPHQL_UNAUTHORIZED_ROLE: '${HASURA_GRAPHQL_UNAUTHORIZED_ROLE}'
+      REMOTE_BACKEND_ENDPOINT: '${REMOTE_BACKEND_ENDPOINT}'
+      REMOTE_BACKEND_API_KEY: '${REMOTE_BACKEND_API_KEY}'
   ngrok-graphql-engine: # curl localhost:4040/api/tunnels
     image: wernight/ngrok
     ports:
-      - "4040:4040"
+      - '4040:4040'
     command:
       - /bin/sh
       - -c

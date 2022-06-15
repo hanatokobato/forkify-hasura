@@ -2,4 +2,8 @@
   definition:
     url_from_env: REMOTE_BACKEND_ENDPOINT
     timeout_seconds: 60
+    headers:
+    - name: Access-Key
+      value_from_env: REMOTE_BACKEND_API_KEY
+    forward_client_headers: true
   comment: ""
