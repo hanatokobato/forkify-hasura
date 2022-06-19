@@ -1,0 +1,11 @@
+table:
+  name: states
+  schema: public
+select_permissions:
+- permission:
+    columns:
+    - country_id
+    - id
+    - name
+    filter: {}
+  role: user

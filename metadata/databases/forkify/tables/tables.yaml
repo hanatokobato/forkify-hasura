@@ -1,5 +1,7 @@
 - "!include public_cart_items.yaml"
+- "!include public_countries.yaml"
 - "!include public_ingredients.yaml"
 - "!include public_recipe_bookmarks.yaml"
 - "!include public_recipes.yaml"
+- "!include public_states.yaml"
 - "!include public_users.yaml"

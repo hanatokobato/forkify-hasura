@@ -1,0 +1,26 @@
+table:
+  name: countries
+  schema: public
+array_relationships:
+- name: states
+  using:
+    manual_configuration:
+      column_mapping:
+        id: country_id
+      insertion_order: null
+      remote_table:
+        name: states
+        schema: public
+select_permissions:
+- permission:
+    columns:
+    - id
+    - name
+    - abbreviation
+    - active
+    - created_at
+    - updated_at
+    filter:
+      active:
+        _eq: true
+  role: user
