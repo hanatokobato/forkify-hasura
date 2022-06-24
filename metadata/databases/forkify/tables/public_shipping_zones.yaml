@@ -1,0 +1,13 @@
+table:
+  name: shipping_zones
+  schema: public
+array_relationships:
+- name: countries
+  using:
+    manual_configuration:
+      column_mapping:
+        id: shipping_zone_id
+      insertion_order: null
+      remote_table:
+        name: countries
+        schema: public
