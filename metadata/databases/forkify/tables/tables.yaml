@@ -3,5 +3,7 @@
 - "!include public_ingredients.yaml"
 - "!include public_recipe_bookmarks.yaml"
 - "!include public_recipes.yaml"
+- "!include public_shipping_rates.yaml"
+- "!include public_shipping_zones.yaml"
 - "!include public_states.yaml"
 - "!include public_users.yaml"
