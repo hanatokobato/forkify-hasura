@@ -1,3 +1,4 @@
+- "!include public_addresses.yaml"
 - "!include public_cart_items.yaml"
 - "!include public_countries.yaml"
 - "!include public_ingredients.yaml"

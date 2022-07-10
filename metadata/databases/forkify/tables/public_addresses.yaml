@@ -1,0 +1,38 @@
+table:
+  name: addresses
+  schema: public
+object_relationships:
+- name: state
+  using:
+    manual_configuration:
+      column_mapping:
+        state_id: id
+      insertion_order: null
+      remote_table:
+        name: states
+        schema: public
+select_permissions:
+- permission:
+    columns:
+    - id
+    - address_type
+    - first_name
+    - last_name
+    - addressable_type
+    - addressable_id
+    - address1
+    - city
+    - country_id
+    - state_id
+    - zip_code
+    - is_default
+    - is_billing_default
+    - created_at
+    - updated_at
+    filter:
+      _and:
+      - addressable_type:
+          _eq: User
+      - addressable_id:
+          _eq: X-Hasura-User-Id
+  role: user

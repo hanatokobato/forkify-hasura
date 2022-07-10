@@ -4,6 +4,7 @@ table:
 select_permissions:
 - permission:
     columns:
+    - abbreviation
     - country_id
     - id
     - name
